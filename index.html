@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <h1>
+        Welcome to the frontpage.
+    </h1>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+
+    <table class="register-form">
+        <label for="create">Create a client</label><br>
+        <br>
+        <input type="text" id="firstnameid" placeholder="Firstname"/>
+        <input type="text" id="lastnameid" placeholder="Lastname"/>
+        <input type="text" id="streetAddress" placeholder="Street Address"/>
+        <input type="text" id="city" placeholder="City"/>
+        <input type="submit" id="submitclient" value="Submit" onclick= "validate()"/> 
+        </p>
+    </table>  
+<br>
+<br>
+<table class="updateregister-form">
+    <label for="create">Update a client</label><br>
+    <br>
+    <input type="text" id="updateclientId" placeholder="clientId"/>
+    <input type="text" id="updatefirstnameid" placeholder="Firstname"/>
+    <input type="text" id="updatelastnameid" placeholder="Lastname"/>
+    <input type="text" id="updatestreetAddress" placeholder="Street Address"/>
+    <input type="text" id="updatecity" placeholder="City"/>
+    <input type="submit" id="submitclient" value="Submit" onclick= "update()"/> 
+    </p>
+</table>  
+<br>
+<br>
+<table class="updateregister-form">
+    <label for="create">Delete a client</label><br>
+    <br>
+    <input type="text" id="deleteclientId" placeholder="clientId"/>
+    <input type="submit" id="submitclient" value="Submit" onclick= "deleteClient()"/> 
+    </p>
+</table>  
+<br>
+<br>
+<table class="updateregister-form">
+    <label for="create">Get a client</label><br>
+    <br>
+    <input type="text" id="getclientId" placeholder="clientId"/>
+    <input type="submit" id="submitclient" value="Submit" onclick= "getClient()"/> 
+    <p id="getfirstname"></p>
+    <p id="getlastname"></p>
+    <p id="getstreetaddress"></p>
+    <p id="getcity"></p>
+    </p>
+</table>  
+<br>
+<br>
+<br>
+<br>
+<form class="reservation-form">
+    <label for="create">Make reservation</label><br><br>
+    <input type="text" id="clientID" placeholder="clientID"/>
+    <input type="date" id="date" placeholder="Date"/>
+    <input type="text" id="hotelName" placeholder="Hotel Name"/>
+    <p>Price:</p>
+    <select name="price" id="price">
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="1500">1500</option>
+        <option value="2000">2000</option>
+      </select>
+    <input type="submit" id="submitreservation" value="Submit" onclick= "createReservation()"/> 
+    </p>
+</form>  
+<br>
+<br>
+<form class="reservation-form">
+    <label for="create">Update reservation</label><br><br>
+    <input type="text" id="updatereservationID" placeholder="reservationID"/>
+    <input type="text" id="updateclientID" placeholder="clientID"/>
+    <input type="date" id="updatedate" placeholder="Date"/>
+    <input type="text" id="updatehotelName" placeholder="Hotel Name"/>
+    <p>Price:</p>
+    <select name="price" id="updateprice">
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="1500">1500</option>
+        <option value="2000">2000</option>
+      </select>
+    <input type="submit" id="submitreservation" value="Submit" onclick= "updateReservation()"/> 
+    </p>
+</form> 
+<br>
+<br>
+<table class="reservation-form">
+    <label for="create">Delete a reservation</label><br>
+    <br>
+    <input type="text" id="deletereservationID" placeholder="reservationID"/>
+    <input type="submit" id="submitreservation" value="Submit" onclick= "deleteReservation()"/> 
+    </p>
+</table>  
+<br>
+<br>
+<table class="reservation-form">
+    <label for="create">Get a reservation</label><br>
+    <br>
+    <input type="text" id="getreservationID" placeholder="reservationID"/>
+    <input type="submit" id="submitclient" value="Submit" onclick= "getReservation()"/> 
+    <p id="getclientID"></p>
+    <p id="getdate"></p>
+    <p id="gethotelName"></p>
+    <p id="getprice"></p>
+    <p id="getbalance"></p>
+    </p>
+</table>  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./create.js"></script>
+    <script src="./createreservation.js"></script>
+    <script src="./update.js"></script>
+    <script src="./updatereservation.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./deletereservation.js"></script>
+    <script src="./get.js"></script>
+    <script src="./getreservation.js"></script>
+</html>
