@@ -6,7 +6,6 @@ const fs = require('fs')
 const https = require('https')
 const http = require('http')
 
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0" // Avoids DEPTH_ZERO_SELF_SIGNED_CERT error for self-signed certs
 const options = {
     key: fs.readFileSync('./ssl/client-key.pem'),
     cert: fs.readFileSync('./ssl/client-cert.pem'),
@@ -20,13 +19,9 @@ const handler = serverNum => (req, res) => {
 //Added Json Body-parser
 app.use(bodyParser.json());
 
-
-
 //Import Routes
-
 const accountRoute = require('./routes/accounts');
 app.use('/clients', accountRoute)
-
 
 //Initial route
 app.get('/', (req, res) => {
@@ -38,11 +33,8 @@ app.post('*', handler(2));
 app.put('*', handler(2));
 app.delete('*', handler(2));
 
-
-//app.listen(3001)
-
-
 const sslServer = https.createServer(options, app)
+
 //Start listening
 sslServer.listen(3001, () => {
     console.log('Server listening on 3001');
