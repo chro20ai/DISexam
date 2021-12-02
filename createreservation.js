@@ -1,9 +1,9 @@
-
 let clientID = document.getElementById("clientID");
 let date = document.getElementById("date");
 let hotelName = document.getElementById("hotelName");
 //var price = document.querySelector('input[name="price"]:checked').value;
 let price = document.getElementById("price")
+let balance = document.getElementById("balance")
 
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -22,6 +22,9 @@ var errormessage = "";
         errormessage += "Need a date"}
     if (hotelName.value == "") {
         errormessage += "Need a hotelName"}
+    if (balance.value == "") {
+        errormessage += "Need a Balance" 
+    }
 
 //alert errormessage
 if (errormessage != ""){
@@ -37,7 +40,7 @@ else
                 date : date.value,
                 hotelName : hotelName.value,
                 price : price.value, 
-                balance : 0
+                balance : balance.value
             }
 
 
@@ -46,7 +49,7 @@ else
             
             axios.post("https://localhost:8080/clients/reservations", reservationdata)
             .then(function(response){
-                alert("Client does not exist")
+                //alert("Client does not exist")
             })
         alert("Reservation created")
 		}

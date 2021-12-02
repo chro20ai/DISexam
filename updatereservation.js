@@ -3,6 +3,7 @@ let updateclientID = document.getElementById("updateclientID");
 let updatedate = document.getElementById("updatedate");
 let updatehotelName = document.getElementById("updatehotelName");
 let updateprice = document.getElementById("updateprice")
+let updatebalance = document.getElementById("updatebalance")
   
 //Validere om oplysniger er korrekte.
 function updateReservation() {
@@ -17,6 +18,8 @@ function updateReservation() {
             updateerrormessage += "Need a date"}
         if (updatehotelName.value == "") {
             updateerrormessage += "Need a hotelName"}
+        if (updatebalance.value == "") {
+            updateerrormessage += "Need a balance"}
     
     //alert errormessage
     if (updateerrormessage != ""){
@@ -31,7 +34,7 @@ else
                 date : updatedate.value,
                 hotelName : updatehotelName.value,
                 price : updateprice.value, 
-                balance : 0
+                balance : updatebalance.value
             }
 
 
