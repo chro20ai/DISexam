@@ -8,10 +8,9 @@ const got = require('got');
 
 
 
-const serverB = require('./server1.js')
-const serverC = require('./server2.js')
+const server = require('./server.js')
 
-const servers = ['https://localhost:3000', 'https://localhost:3001' ];
+const servers = ['https://localhost:3000', 'https://localhost:3001', 'https://localhost:3002', 'https://localhost:3003'];
 
 // Avoids DEPTH_ZERO_SELF_SIGNED_CERT error for self-signed certs
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
@@ -25,7 +24,6 @@ let cur = 0;
 
 const handler = async (req, res) => {
     console.log(req.method)
-    request({ url: servers[cur] + req.url }).pipe(res);
     if(req.method == "GET"){
         request({ url: servers[cur] + req.url }).pipe(res);
     }

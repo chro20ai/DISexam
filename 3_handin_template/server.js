@@ -37,9 +37,25 @@ app.post('*', handler(1));
 app.put('*', handler(1));
 app.delete('*', handler(1));
 
-const sslServer = https.createServer(options, app)
+const sslServer1 = https.createServer(options, app)
+const sslServer2 = https.createServer(options, app)
+const sslServer3 = https.createServer(options, app)
+const sslServer4 = https.createServer(options, app)
+
 
 //Start listening
-sslServer.listen(3000, () => {
+sslServer1.listen(3000, () => {
     console.log('Server listening on 3000');
+});
+
+sslServer2.listen(3001, () => {
+    console.log('Server listening on 3001');
+});
+
+sslServer3.listen(3002, () => {
+    console.log('Server listening on 3002');
+});
+
+sslServer4.listen(3003, () => {
+    console.log('Server listening on 3003');
 });
